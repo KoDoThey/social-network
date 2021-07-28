@@ -12,4 +12,7 @@ public interface PostRepository extends JpaRepository<Post, String> {
 
     public List<Post> findPostByUserId(String userId);
 
+    public List<Post> findAllByDeleteStatus (Integer deleteStatus);
+
+
 }
