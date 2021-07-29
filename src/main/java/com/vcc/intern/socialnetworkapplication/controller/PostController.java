@@ -13,8 +13,6 @@ import java.util.List;
 @Controller
 @RequestMapping("/post")
 public class PostController {
-    @Autowired
-    PostRepository postRepository;
 
     @Autowired
     PostService postService;
@@ -32,6 +30,7 @@ public class PostController {
 
     @GetMapping("/get-all")
     public List<Post> getPostsAvailable() {
+        System.out.println(postService.getPostsAvailable());
         return postService.getPostsAvailable();
     }
 

@@ -25,11 +25,12 @@ public class PostService {
     }
 
     public List<Post> getPostsAvailable() {
-        return postRepository.findAllByDeleteStatus(0);
+        return postRepository.findAllByIsDeleted(0);
     }
 
     public Post addPost(Post post) {
         post.setPostId(UUID.randomUUID().toString());
+        post.setCreateTime(Timestamp.valueOf(LocalDateTime.now()));
         post.setIsDeleted(0);
         return postRepository.save(post);
     }

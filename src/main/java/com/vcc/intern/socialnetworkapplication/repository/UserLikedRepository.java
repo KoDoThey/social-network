@@ -11,7 +11,7 @@ import java.util.List;
 @Repository
 public interface UserLikedRepository extends JpaRepository<UserLiked, String> {
 
-    @Query("SELECT u.user_name FROM user u WHERE u.user_name =: userName")
-    public List<String> findUserNameByUserName(@Param("userName") String userName);
+//    @Query("SELECT u.user_name FROM user u WHERE u.user_name =: userName")
+//    public List<String> findUserNameByUserName(@Param("userName") String userName);
 
 }
