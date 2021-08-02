@@ -2,6 +2,7 @@ package com.vcc.intern.socialnetworkapplication.service;
 
 import com.vcc.intern.socialnetworkapplication.model.Post;
 import com.vcc.intern.socialnetworkapplication.model.PostLiked;
+import com.vcc.intern.socialnetworkapplication.model.UserInfo;
 import com.vcc.intern.socialnetworkapplication.repository.PostLikedRepository;
 import com.vcc.intern.socialnetworkapplication.repository.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;

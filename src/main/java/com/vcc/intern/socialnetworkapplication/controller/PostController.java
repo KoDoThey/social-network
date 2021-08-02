@@ -1,16 +1,15 @@
 package com.vcc.intern.socialnetworkapplication.controller;
 
 import com.vcc.intern.socialnetworkapplication.model.Post;
-import com.vcc.intern.socialnetworkapplication.model.User;
-import com.vcc.intern.socialnetworkapplication.repository.PostRepository;
+import com.vcc.intern.socialnetworkapplication.model.UserInfo;
 import com.vcc.intern.socialnetworkapplication.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+
 
 import java.util.List;
 
-@Controller
+@RestController
 @RequestMapping("/post")
 public class PostController {
 
@@ -20,7 +19,8 @@ public class PostController {
     @PostMapping("/add")
     public String addPost(@RequestBody Post post) {
         postService.addPost(post);
-        return "Add success!";
+        System.out.println(post.toString());
+        return "Post added!";
     }
 
     @GetMapping("/get/{postId}")
@@ -47,8 +47,8 @@ public class PostController {
 
     @PostMapping("/like/{postId}")
     public String likePost(@PathVariable(name = "postId") String postId,
-                           @RequestBody String userId) {
-        postService.likePost(postId, userId);
+                           @RequestBody UserInfo userInfo) {
+        postService.likePost(postId, userInfo.getUserId());
         return "Liked post!";
     }
 }

@@ -15,12 +15,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * 2 User cùng like nhau thì match
  *
  * Cần có các api:
- * - List post của user (kèm trạng thái đã like hay chưa)
+ * - List post của user OK (kèm trạng thái đã like hay chưa)
  * - Danh sách các user mà mình đã like
  * - Danh sách các user đã match
- * - Tạo, sửa, xóa bài viết của mình
- * - Like bài viết của user khác
- * - Like một user khác
+ * - Tạo, sửa, xóa bài viết của mình OK
+ * - Like bài viết của user khác OK
+ * - Like một user khác OK
  * */
 
 @SpringBootApplication

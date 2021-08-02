@@ -4,7 +4,6 @@ import lombok.Data;
 
 import javax.persistence.Column;
 import javax.persistence.Id;
-
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
@@ -14,11 +13,14 @@ import javax.persistence.Table;
 public class UserLiked {
     @Id
     @Column(name = "user_liked_id")
-    private String userLikedId;
+    private String Id;
+
     @Column(name = "user_id_like")
-    private String userIdLike;
+    private String userLikeId;
+
     @Column(name = "user_id_liked")
-    private String userIdLiked;
-    @Column(name = "match")
-    private int match;
+    private String userLikedId;
+
+    @Column(name = "matched")
+    private int matched;
 }
