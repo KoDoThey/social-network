@@ -20,12 +20,9 @@ public class Post {
     @Column(name = "user_id")
     private String userId;
     @Column(name = "create_time")
-
-    private String createTime;
+    private Timestamp createTime;
     @Column(name = "edit_time")
-    private String editTime;
-
-
+    private Timestamp editTime;
     @Column(name = "is_deleted")
     private int isDeleted;
 }

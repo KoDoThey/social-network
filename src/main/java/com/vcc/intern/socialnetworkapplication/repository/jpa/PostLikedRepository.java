@@ -1,4 +1,4 @@
-package com.vcc.intern.socialnetworkapplication.repository;
+package com.vcc.intern.socialnetworkapplication.repository.jpa;
 
 import com.vcc.intern.socialnetworkapplication.model.PostLiked;
 import org.springframework.data.jpa.repository.JpaRepository;

@@ -33,13 +33,13 @@ public class PostHBase {
                     Bytes.toBytes("user_id"),
                     Bytes.toBytes(post.getUserId()));
 
-            p.addColumn(Bytes.toBytes("post"),
-                    Bytes.toBytes("create_time"),
-                    Bytes.toBytes(post.getCreateTime()));
-
-            p.addColumn(Bytes.toBytes("post"),
-                    Bytes.toBytes("edit_time"),
-                    Bytes.toBytes(post.getEditTime()));
+//            p.addColumn(Bytes.toBytes("post"),
+//                    Bytes.toBytes("create_time"),
+//                    Bytes.toBytes(post.getCreateTime()));
+//
+//            p.addColumn(Bytes.toBytes("post"),
+//                    Bytes.toBytes("edit_time"),
+//                    Bytes.toBytes(post.getEditTime()));
 
             p.addColumn(Bytes.toBytes("post"),
                     Bytes.toBytes("is_deleted"),
@@ -53,14 +53,13 @@ public class PostHBase {
         }
     }
 
-    public void updatePost(Post post){
-        Put put = new Put(Bytes.toBytes(post.getPostId()));
-        put.addColumn(Bytes.toBytes("post"), Bytes.toBytes("content"), Bytes.toBytes(post.getContent()));
-        put.addColumn(Bytes.toBytes("post"), Bytes.toBytes("edit_time"), Bytes.toBytes(post.getEditTime()));
-        put.addColumn(Bytes.toBytes("post"), Bytes.toBytes("amount"), Bytes.toBytes(book.getAmount()));
-
-        Hbase hbase =new Hbase();
-        hbase.UpdateData(TableName.valueOf("book_lib"), put);
-
-    }
+//    public void updatePost(Post post){
+//        Put put = new Put(Bytes.toBytes(post.getPostId()));
+//        put.addColumn(Bytes.toBytes("post"), Bytes.toBytes("content"), Bytes.toBytes(post.getContent()));
+//        put.addColumn(Bytes.toBytes("post"), Bytes.toBytes("edit_time"), Bytes.toBytes(post.getEditTime()));
+//        put.addColumn(Bytes.toBytes("post"), Bytes.toBytes("amount"), Bytes.toBytes(book.getAmount()));
+//
+//        Hbase hbase =new Hbase();
+//        hbase.UpdateData(TableName.valueOf("book_lib"), put);
+//    }
 }
