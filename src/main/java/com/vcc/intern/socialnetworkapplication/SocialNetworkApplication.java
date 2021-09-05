@@ -1,5 +1,10 @@
 package com.vcc.intern.socialnetworkapplication;
 
+import org.apache.hadoop.hbase.TableName;
+import org.apache.hadoop.hbase.client.ColumnFamilyDescriptor;
+import org.apache.hadoop.hbase.client.ColumnFamilyDescriptorBuilder;
+import org.apache.hadoop.hbase.client.TableDescriptorBuilder;
+import org.apache.hadoop.hbase.util.Bytes;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -28,6 +33,10 @@ public class SocialNetworkApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SocialNetworkApplication.class, args);
-	}
 
+		TableDescriptorBuilder tableBuilder = TableDescriptorBuilder.newBuilder(TableName.valueOf("post1"));
+		ColumnFamilyDescriptor colf1 = ColumnFamilyDescriptorBuilder.of(Bytes.toBytes("info"));
+		tableBuilder.setColumnFamily(colf1);
+		System.out.println("created table");
+	}
 }
