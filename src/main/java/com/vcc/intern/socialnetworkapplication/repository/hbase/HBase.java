@@ -1,4 +1,4 @@
-package com.vcc.intern.socialnetworkapplication.repository;
+package com.vcc.intern.socialnetworkapplication.repository.hbase;
 
 import com.vcc.intern.socialnetworkapplication.model.Post;
 import org.apache.hadoop.conf.Configuration;
@@ -35,7 +35,8 @@ public class HBase {
     public void dropTable(String tableName) throws IOException {
         Configuration config = HBaseConfiguration.create();
         HBaseAdmin admin = new HBaseAdmin(config);
-
+//'HBaseAdmin(org.apache.hadoop.hbase.client.ClusterConnection)' is not public in 'org.apache.hadoop.hbase.client.HBaseAdmin'.
+// Cannot be accessed from outside package
         admin.disableTable(TableName.valueOf(tableName));
 
         admin.deleteTable(TableName.valueOf(tableName));
@@ -66,7 +67,6 @@ public class HBase {
                 scan.addColumn(Bytes.toBytes("info"), Bytes.toBytes("post_id"));
                 Post post = new Post(postId, content, userId);
                 postList.add(post);
-
             }
             scanner.close();
         } catch (IOException e) {

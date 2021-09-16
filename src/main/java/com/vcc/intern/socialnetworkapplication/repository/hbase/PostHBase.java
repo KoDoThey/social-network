@@ -1,4 +1,4 @@
-package com.vcc.intern.socialnetworkapplication.repository;
+package com.vcc.intern.socialnetworkapplication.repository.hbase;
 import com.vcc.intern.socialnetworkapplication.model.Post;
 import org.apache.hadoop.hbase.*;
 import org.apache.hadoop.conf.Configuration;
@@ -40,6 +40,7 @@ public class PostHBase {
 //            p.addColumn(Bytes.toBytes("post"),
 //                    Bytes.toBytes("edit_time"),
 //                    Bytes.toBytes(post.getEditTime()));
+//  Cannot resolve method 'toBytes(java.sql.Timestamp)'
 
             p.addColumn(Bytes.toBytes("post"),
                     Bytes.toBytes("is_deleted"),
